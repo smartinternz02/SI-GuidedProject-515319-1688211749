@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html,
+body {
+    min-height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    padding-inline: 5em;
+    padding-block: 1em;
+    background-color: lightblue;
+    display: flex;
+    align-items: center;
+}
+
+header a {
+    text-decoration: none;
+    color: black;
+}
+
+#name-in-header {
+    font-size: larger;
+}
+
+nav {
+    margin-left: auto;
+}
+
+nav a {
+    text-decoration: underline;
+}
+main {
+    flex: auto;
+    padding: 5em;
+}
+
+footer {
+    background-color: lightblue;
+    padding-inline: 5em;
+    padding-block: 2em;
+}

@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %} {{name}} {% endblock %}
+
+{% block head %} {% endblock %}
+
+{% block main %}
+
+<form action="/search">
+    <input placeholder="Search for your stock here" name="q" list="stock-names"/>
+    <datalist id="stock-names">
+        {% for name in stock_names %}
+        <option value="{{name}}" />
+        {% endfor %}
+    </datalist>
+    <button>Go</button>
+</form>
+
+<h1>{{name}}</h1>
+
+<h2>Sentiment Analysis using NLP</h2>
+<img src="data:image/png;base64,{{sentiment_graph_data}}" />
+
+<h2>Predictions using LSTM Models</h2>
+{% for col in graphs_data %}
+    <h3>{{col}} Price Predictions</h3>
+    <img src="data:image/png;base64,{{graphs_data[col]}}" />
+{% endfor %}
+
+{% endblock %}

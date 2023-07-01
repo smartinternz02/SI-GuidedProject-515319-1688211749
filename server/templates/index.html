@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block title %} Home {% endblock %}
+{% block head%}
+{% endblock %}
+
+{% block main %}
+Welcome to
+<h1>StockWise</h1>
+
+<p>An AI-based stock analysis platform</p>
+
+<form action="/search">
+    <input placeholder="Search for your stock here" name="q" list="stock-names"/>
+    <datalist id="stock-names">
+        {% for name in stock_names %}
+        <option value="{{name}}" />
+        {% endfor %}
+    </datalist>
+    <button>Go</button>
+</form>
+
+{% endblock %}

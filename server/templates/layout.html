@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{% block title %} {% endblock %} | StockWise</title>
+        <link
+            rel="stylesheet"
+            href="{{url_for('static', filename='style.css')}}"
+        />
+        {% block head %} {% endblock %}
+    </head>
+    <body>
+        <header>
+            <a id="name-in-header" href="/">StockWise</a>
+            <nav>
+                <a href="/search">Search</a>
+                <a href="/about">About</a>
+                <a href="/license">License</a>
+                {# {% for navlink in navlinks %}
+                <a href="{{navlink['link']}}">{{navlink['name']}}</a>
+                {% endfor %} #}
+            </nav>
+        </header>
+        <main>{% block main %} {% endblock %}</main>
+        <footer>
+            <div>Made by Samridh, Dhanesh, Sujith and Saswata</div>
+            <div>Under the GNU-GPL v3 Open Source License</div>
+        </footer>
+    </body>
+</html>
